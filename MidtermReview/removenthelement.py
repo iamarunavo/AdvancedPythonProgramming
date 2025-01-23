@@ -1,5 +1,5 @@
 def remove_every_nth_element(lst: list[int], n: int) -> list[int]:
-    for i in range(len(lst)-1, 0, -1):
+    for i in range(len(lst)-1, 0, -n):
         del(lst[i])
 
     return lst

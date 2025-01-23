@@ -18,6 +18,7 @@ def make_stateful_object(initial_value: int):
     "set_value": set_value,
     "reset": reset
     }
+    
 stateful = make_stateful_object(10)
 print(stateful['get_value']()) # Output: 10
 stateful['set_value'](20)

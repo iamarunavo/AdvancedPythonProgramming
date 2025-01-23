@@ -10,6 +10,3 @@ tens = (num // 10) % 10
 units = num % 10
 
 print(units,tens,hundreds)
-print(324//100)
-print((324//10))
-print(324%10)

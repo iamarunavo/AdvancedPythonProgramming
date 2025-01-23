@@ -12,7 +12,7 @@ func(1, 2, 3, a=4, b=5)
 def func(a, *args, b):
     print(a, args, b)
 func(1, 2, 3, 4)
-#There wouldnt be any output just an error as the rule is that positional arguments must be before variadic, which is not the case in the function defined
+#There wouldnt be any output just an error as b is supposed required to be a keyword in this case, which is not the case in the function defined
 
 #3. Determine whether the following function definition is valid. If not, explain why:
 def func(a, b, /, c, *, d):
@@ -57,7 +57,8 @@ print(func(5))
 print(func(5, 20))
 #Expected output:
 # 50
-# would be an error since 20 being passed in positional when it needs to be keyword
+# 100 
+# Both calls work because y is a positional-or-keyword argument (default values do not restrict how arguments are passed).
 
 #9 Does the following function definition contain any errors? If so, describe them:
 '''
@@ -72,3 +73,8 @@ def func(a, mylist=[]):
     return mylist
 print(func(1))
 print(func(2))
+#The code does not work as expected because the default mutable argument mylist retains its state across function calls.
+#Output:
+# [1]
+# [1, 2]
+
